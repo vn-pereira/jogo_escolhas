@@ -4,21 +4,70 @@
     <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <link rel="stylesheet" href=".css"> 
-            <title>Jogo Escolhas</title>
+            <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="JOGO ESCOLHAS/styleEscolhas.css"> 
+            <title>Corona Of World</title>
   
         </head> 
 
-    <script>
-
-    </script>
     <body>
         <h1>World of Corona</h1>
         <p>Bem vindo ao mundo Corona, aqui você é um explorador(a) das nossas aventuras. <br>
         Escolha entre os lugares que você queira circular e avante combate ao Coronga!! </p>
+         <button type="button" onclick="PrimeiraFase()">Start</button>
         
+        
+        <script>
+            function InicioJogo(){ //condição de vitória
+                                        //nome do botão
+                if (PrimeiraFase() == 'sair'){
+                    document.write("Sábia escolha estudante, vamos para a proxima fase");
+                }else{//condição de derrota
+                    document.write("Seja mais corajoso, tente novamente");
+                }
+            }
+
+            function PrimeiraFase(){
+                var tagHtml = document.createElement("SELECT");
+                    tagHtml.setAttribute("id", "mySelect");//no corpo HTML está sendo criado a tag select
+                    document.body.appendChild(tagHtml);
+
+                var menuOpcao = document.createElement("option"); //criando 1ª opção e colocando o valor
+                menuOpcao.setAttribute("value", "ficarEmCasa"); 
+                
+                var item = document.createTextNode("Ficar em casa");
+                menuOpcao.appendChild(item);
+                document.getElementById("mySelect").appendChild(menuOpcao); 
+                
+                var menuOpcao = document.createElement("option"); //criando 2ª opção e colocando o valor
+                menuOpcao.setAttribute("value", "sair");
+
+                var item1 = document.createTextNode("Sair");
+                menuOpcao.appendChild(item1);
+                document.getElementById("mySelect").appendChild(menuOpcao); 
+                
+                var button = document.querySelector ("button");
+                
+            }
+               
+             
+            
+            function SegundaFase(){
+                
+                //button.onclick = Ficar em casa;
+                //button.onclick = Ir à faculdade;
+               // document.write("E aí estudante, você prefere continuar em casa e descansar"  + <br/> + "ou sair para dar um rolê?");
+                
+                  //'Ir para a faculdade'
+                    //'Agência da Caixa'
+            }
+
+        </script>
+   
+        
+    
     </body>
-        <!--<input/>-->
-            <button>Esquerda</button>
-            <button>Direita</button>
+       
+           
+          
 </html>    
