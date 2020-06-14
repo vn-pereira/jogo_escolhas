@@ -5,7 +5,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="JOGO ESCOLHAS/styleEscolhas.css"> 
+            <link rel="stylesheet" href="styleEscolhas.css"> 
             <title>Corona Of World</title>
   
         </head> 
@@ -14,10 +14,12 @@
         <h1>World of Corona</h1>
         <p>Bem vindo ao mundo Corona, aqui você é um explorador(a) das nossas aventuras. <br>
         Escolha entre os lugares que você queira circular e avante combate ao Coronga!! </p>
-         <button type="button" onclick="PrimeiraFase()">Start</button>
+         <p id="perguntaJogo"></p>
+        <button type="button" onclick="PrimeiraFase()">Start</button>
         
         
         <script>
+            
             function InicioJogo(){ //condição de vitória
                                         //nome do botão
                 if (PrimeiraFase() == 'sair'){
@@ -27,41 +29,100 @@
                 }
             }
 
-            function PrimeiraFase(){
+            function PrimeiraFase(escolha){
                 var tagHtml = document.createElement("SELECT");
                     tagHtml.setAttribute("id", "mySelect");//no corpo HTML está sendo criado a tag select
                     document.body.appendChild(tagHtml);
 
                 var menuOpcao = document.createElement("option"); //criando 1ª opção e colocando o valor
-                menuOpcao.setAttribute("value", "ficarEmCasa"); 
+                    menuOpcao.setAttribute("value", "ficarEmCasa"); 
                 
                 var item = document.createTextNode("Ficar em casa");
-                menuOpcao.appendChild(item);
-                document.getElementById("mySelect").appendChild(menuOpcao); 
+                    menuOpcao.appendChild(item);
+                    document.getElementById("mySelect").appendChild(menuOpcao); 
                 
                 var menuOpcao = document.createElement("option"); //criando 2ª opção e colocando o valor
-                menuOpcao.setAttribute("value", "sair");
+                    menuOpcao.setAttribute("value", "sair");
 
                 var item1 = document.createTextNode("Sair");
-                menuOpcao.appendChild(item1);
-                document.getElementById("mySelect").appendChild(menuOpcao); 
+                    menuOpcao.appendChild(item1);
+                    document.getElementById("mySelect").appendChild(menuOpcao); 
                 
-                var button = document.querySelector ("button");
+                var button = document.querySelector ("button"); //selecionou a tag botão
+                    button.onclick = SegundaFase;   
+                    button.innerText = 'Próxima Fase';   //mudou o nome do botão
+
+                var texto = document.querySelector ("#perguntaJogo");  
+                    texto.innerText =  'E aí estudante, você prefere continuar em casa e descansar ou sair para dar um rolê?';
                 
+                if((escolha == 'Ficar em casa') || (escolha =='sair')){
+                        return escolha; 
+                }
             }
-               
+                 
              
             
             function SegundaFase(){
+                var tagHtml = document.createElement("SELECT");
+                    tagHtml.setAttribute("id", "mySelect2");//no corpo HTML está sendo criado a tag select
+                    document.body.appendChild(tagHtml);
+
+                var menuOpcao = document.createElement("option"); //criando 1ª opção e colocando o valor
+                    menuOpcao.setAttribute("value", "faculdade"); 
                 
-                //button.onclick = Ficar em casa;
+                var item = document.createTextNode("Ir à faculdade");
+                    menuOpcao.appendChild(item);
+                    document.getElementById("mySelect2").appendChild(menuOpcao); 
+                
+                var menuOpcao = document.createElement("option"); //criando 2ª opção e colocando o valor
+                    menuOpcao.setAttribute("value", "banco");
+
+                var item1 = document.createTextNode("Agência da Caixa");
+                    menuOpcao.appendChild(item1);
+                    document.getElementById("mySelect2").appendChild(menuOpcao); 
+                
+                var button = document.querySelector ("button");
+                    button.onclick = TerceiraFase;
+                
+                var texto = document.querySelector ("#perguntaJogo");  
+                    texto.innerText = 'Você prefere ir à faculdade ou enfrentar fila na agência da caixa';
+                
+                
                 //button.onclick = Ir à faculdade;
                // document.write("E aí estudante, você prefere continuar em casa e descansar"  + <br/> + "ou sair para dar um rolê?");
                 
                   //'Ir para a faculdade'
                     //'Agência da Caixa'
             }
+            
+            function TerceiraFase(){
+                var tagHtml = document.createElement("SELECT");
+                    tagHtml.setAttribute("id", "mySelect3");//no corpo HTML está sendo criado a tag select
+                    document.body.appendChild(tagHtml);
 
+                var menuOpcao = document.createElement("option"); //criando 1ª opção e colocando o valor
+                    menuOpcao.setAttribute("value", "faculdade"); 
+                
+                var item = document.createTextNode("Ir à faculdade");
+                    menuOpcao.appendChild(item);
+                    document.getElementById("mySelect3").appendChild(menuOpcao); 
+                
+                var menuOpcao = document.createElement("option"); //criando 2ª opção e colocando o valor
+                    menuOpcao.setAttribute("value", "banco");
+
+                var item1 = document.createTextNode("Agência da Caixa");
+                    menuOpcao.appendChild(item1);
+                    document.getElementById("mySelect3").appendChild(menuOpcao); 
+                
+                var button = document.querySelector ("button");
+                    button.onclick = QuartaFase;
+                
+                var texto = document.querySelector ("#perguntaJogo");  
+                    texto.innerText =  'Você prefere ir à faculdade ou enfrentar fila na agência da caixa';
+            }
+
+            
+        function QuartaFase(){}
         </script>
    
         
