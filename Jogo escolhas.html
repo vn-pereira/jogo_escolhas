@@ -5,7 +5,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="styleEscolhas.css"> 
+            <link rel="stylesheet" href="./styleEscolhas.css"> 
             <title>Corona Of World</title>
   
         </head> 
@@ -54,9 +54,12 @@
 
                 var texto = document.querySelector ("#perguntaJogo");  
                     texto.innerText =  'E aí estudante, você prefere continuar em casa e descansar ou sair para dar um rolê?';
+                    
+                    while(true){
+                        if((input == 'Ficar em casa') || (input =='sair')){
+                        return input; 
+                    }
                 
-                if((escolha == 'Ficar em casa') || (escolha =='sair')){
-                        return escolha; 
                 }
             }
                  

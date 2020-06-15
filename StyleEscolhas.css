@@ -1,6 +1,31 @@
 html{
-    background-color: gray;
+    display: flex;
+    justify-content: center;
+    background-color: #120136;
 }
 h1{
+    display: flex;
+    align-items: center;
     font-family: 'Press Start 2P';
+    color:#035AA6;
+}
+p{
+    display: flex;
+    align-items: center;
+    font-family: 'Press Start 2P';
+    font-size: 15px;
+    color:#40BAD5;
+    width: 700px;
+    height: 75px;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P';
+    background-color: yellow;
+    color: #120136;
+    padding: 10px 10px;
+    width: 150px;
 }
