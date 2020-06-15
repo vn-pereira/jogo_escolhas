@@ -9,6 +9,7 @@ h1{
     font-family: 'Press Start 2P';
     color:#035AA6;
 }
+
 p{
     display: flex;
     align-items: center;
@@ -17,6 +18,10 @@ p{
     color:#40BAD5;
     width: 700px;
     height: 75px;
+}
+
+select{
+    margin: 20px;
 }
 
 button{
@@ -29,3 +34,9 @@ button{
     padding: 10px 10px;
     width: 150px;
 }
+
+.restart{
+    position: absolute;
+    right: 50px;
+}
+
