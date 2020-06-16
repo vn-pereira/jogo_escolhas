@@ -28,12 +28,26 @@
             var button = document.querySelector ("button");
             var texto = document.querySelector ("#perguntaJogo");
             
+           /* function elementFactory(type, id, classe, content) {
+                let elementCreated = document.createElement(`${type}`);
+                elementCreated.setAttribute('id', `${id}`);
+                elementCreated.classList.add(`${classe}`);
+                elementCreated.innerText = `${content}`; 
+            return elementCreated;
+            }       */
+
+
+            /*function addEvent2Element(id, event, functioN) {
+               let element = document.querySelector(`#${id}`);
+                element.addEventListener(`${event}`, functioN);
+            }       */
+
             function CondicaoVitoria(){ //condição de vitória
                 escolha = tagHtml.value;                       
                 if (escolha == 'sair'){
                     SegundaFase();
-                }else{  CondicaoDerrota();//condição de derrota
-                    
+                }else{  
+                    CondicaoDerrota();//condição de derrota
                 }
             }
 
@@ -41,17 +55,45 @@
                 escolha = tagHtml.value;                       
                 if (escolha == 'banco'){
                     TerceiraFase();
-                }else{  CondicaoDerrota();//condição de derrota
-                    
+                }else{  
+                    CondicaoDerrota();//condição de derrota
                 }
             }
 
             function CondicaoVitoria3(){ //condição de vitória
+                console.log(tagHtml.value);
                 escolha = tagHtml.value;                       
-                if (escolha == 'viajar'){
+                if (escolha == 'brasilia'){
                     QuartaFase();
-                }else{  CondicaoDerrota();//condição de derrota
-                    
+                }else{  
+                    CondicaoDerrota();//condição de derrota
+                }
+            }
+
+            function CondicaoVitoria4(){ //condição de vitória
+                escolha = tagHtml.value;                       
+                if (escolha == 'chave'){
+                    QuintaFase();
+                }else{  
+                    CondicaoDerrota();//condição de derrota
+                }
+            }
+
+            function CondicaoVitoria5(){ //condição de vitória
+                escolha = tagHtml.value;                       
+                if (escolha == 'laboratorio'){
+                    SextaFase();
+                }else{  
+                    CondicaoDerrota();//condição de derrota
+                }
+            }
+
+            function CondicaoVitoria6(){ //condição de vitória
+                escolha = tagHtml.value;                       
+                if (escolha == 'vacina'){
+                    SetimaFase();
+                }else{  
+                    CondicaoDerrota();//condição de derrota
                 }
             }
 
@@ -60,37 +102,32 @@
             }
                  
             function PrimeiraFase(){
-              
+                    
                     tagHtml.setAttribute("id", "mySelect");//no corpo HTML está sendo criado a tag select
                     document.body.appendChild(tagHtml);
 
                 //criando 1ª opção e colocando o valor
                     menuOpcao.setAttribute("value", "ficarEmCasa"); 
                 
-                
                     menuOpcao.appendChild(item);
                     document.getElementById("mySelect").appendChild(menuOpcao); 
                 
                  //criando 2ª opção e colocando o valor
                     menuOpcao2.setAttribute("value", "sair");
-
                
                     menuOpcao2.appendChild(item1);
                     document.getElementById("mySelect").appendChild(menuOpcao2); 
                 
-                 //selecionou a tag botão
-                    button.onclick = CondicaoVitoria;   
-                    button.innerText = 'Próxima Fase';   //mudou o nome do botão
+                    //selecionou a tag botão
+                    //button.onclick = CondicaoVitoria;   
+                    //button.innerText = 'Próxima Fase';   //mudou o nome do botão
+                    var botao = elementFactory('button', 'botao-1', 'qualquer-classe', 'Próxima fase')
 
-                  
                     texto.innerText =  'E aí estudante, você prefere continuar em casa e descansar ou sair para dar um rolê?';
                 
-                console.log(tagHtml);
-              
-                console.log(escolha);
+                    console.log(tagHtml);
+                    console.log(escolha);
             }
-                 
-             
             
             function SegundaFase(){
                 
@@ -112,38 +149,94 @@
                     button.onclick = CondicaoVitoria2;
                 
                     texto.innerText = 'Você prefere ir à faculdade ou enfrentar fila na agência da caixa';
-                
-                
-                //button.onclick = Ir à faculdade;
-               // document.write("E aí estudante, você prefere continuar em casa e descansar"  + <br/> + "ou sair para dar um rolê?");
-                
-                  //'Ir para a faculdade'
-                    //'Agência da Caixa'
             }
             
             function TerceiraFase(){
-                tagHtml.setAttribute("id", "mySelect");//no corpo HTML está sendo criado a tag select
+                    tagHtml.setAttribute("id", "mySelect");//no corpo HTML está sendo criado a tag select
                     document.body.appendChild(tagHtml);
 
-                    menuOpcao.setAttribute("value", "viajar"); 
+                    menuOpcao.setAttribute("value", "brasilia"); 
                     
-                    item.textContent ="Ir á Brasília"
+                    item.textContent ="Ir á Brasília";
                     menuOpcao.appendChild(item);
                     document.getElementById("mySelect").appendChild(menuOpcao); 
                
                     menuOpcao2.setAttribute("value", "churrasco");
                    
-                    item1.textContent = "Fazer Churrasco"
+                    item1.textContent = "Fazer Churrasco";
                     menuOpcao2.appendChild(item1);
                     document.getElementById("mySelect").appendChild(menuOpcao2); 
                 
-                    button.onclick = CondicaoVitoria3;
+                    button.addEventListener('click',CondicaoVitoria3);
                 
-                    texto.innerText = 'Você prefere ir à Brasília ou Churrascar com os colegas?';
-            }
+                    texto.innerText = 'Você prefere ir à Brasília ou Churrascar com os amigos?';
+                    console.log(tagHtml);
+                    console.log(escolha);
+                }
 
             
-        function QuartaFase(){}
+            function QuartaFase(){
+                    tagHtml.setAttribute("id", "mySelect");//no corpo HTML está sendo criado a tag select
+                    document.body.appendChild(tagHtml);
+
+                    menuOpcao.setAttribute("value", "chave"); 
+                    
+                    item.textContent ="Pegar a chave";
+                    menuOpcao.appendChild(item);
+                    document.getElementById("mySelect").appendChild(menuOpcao); 
+               
+                    menuOpcao2.setAttribute("value", "protesto");
+                   
+                    item1.textContent = "Ir à manifestação";
+                    menuOpcao2.appendChild(item1);
+                    document.getElementById("mySelect").appendChild(menuOpcao2); 
+                
+                    button.onclick = CondicaoVitoria4;
+                
+                    texto.innerText = 'Você vai pegar a chave ou vai para a manifestação?';
+            }
+            
+            function QuintaFase(){
+                    tagHtml.setAttribute("id", "mySelect");//no corpo HTML está sendo criado a tag select
+                    document.body.appendChild(tagHtml);
+
+                    menuOpcao.setAttribute("value", "laboratorio"); 
+                    
+                    item.textContent ="Ir para o laboratório";
+                    menuOpcao.appendChild(item);
+                    document.getElementById("mySelect").appendChild(menuOpcao); 
+               
+                    menuOpcao2.setAttribute("value", "voucher");
+                   
+                    item1.textContent = "Gastar o corona Voucher";
+                    menuOpcao2.appendChild(item1);
+                    document.getElementById("mySelect").appendChild(menuOpcao2); 
+                
+                    button.onclick = CondicaoVitoria5;
+                
+                    texto.innerText = 'Faça sua escolha Padawan, vai para o Laboratório ou quer gastar o Corona Voucher';
+            }
+
+            function SextaFase(){
+                    tagHtml.setAttribute("id", "mySelect");//no corpo HTML está sendo criado a tag select
+                    document.body.appendChild(tagHtml);
+
+                    menuOpcao.setAttribute("value", "conversar"); 
+                    
+                    item.textContent ="Bater com Bolsodracula";
+                    menuOpcao.appendChild(item);
+                    document.getElementById("mySelect").appendChild(menuOpcao); 
+               
+                    menuOpcao2.setAttribute("value", "vacina");
+                   
+                    item1.textContent = "Pegar a vacina";
+                    menuOpcao2.appendChild(item1);
+                    document.getElementById("mySelect").appendChild(menuOpcao2); 
+                
+                    button.onclick = CondicaoVitoria6;
+                
+                    texto.innerText = 'Faça sua escolha Padawan, vai para o Laboratório ou quer gastar o Corona Voucher';
+            }
         </script>
    
         

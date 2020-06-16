@@ -21,13 +21,16 @@ p{
 }
 
 select{
+    font-family: 'Press Start 2P';
+    display: flex;
+    align-items: center;
     margin: 20px;
 }
 
 button{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     font-family: 'Press Start 2P';
     background-color: yellow;
     color: #120136;
@@ -37,6 +40,7 @@ button{
 
 .restart{
     position: absolute;
-    right: 50px;
+    top: 10px;
+    right: 70px;
 }
 
