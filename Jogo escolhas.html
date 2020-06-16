@@ -12,8 +12,9 @@
 
     <body>
         <h1>World of Corona</h1>
-        <p>Bem vindo ao mundo Corona, aqui você é um explorador(a) das nossas aventuras. <br>
-        Escolha entre os lugares que você queira circular e avante combate ao Coronga!! </p>
+        <p>Bem vindo ao mundo Coronga, aqui você é um explorador(a) das nossas aventuras. <br>
+        Escolha entre os lugares que você queira circular. O objetivo do jogo é pegar a vacina Coronga. <br>
+        Partiu combater o Coronga!!! </p>
          <p id="perguntaJogo"></p>
         <button type="button" onclick="PrimeiraFase()">Start</button>
         <div class="restart"><a href="">RESTART</a></div>
@@ -91,10 +92,13 @@
             function CondicaoVitoria6(){ //condição de vitória
                 escolha = tagHtml.value;                       
                 if (escolha == 'vacina'){
-                    SetimaFase();
+                    FaseFinal();
                 }else{  
                     CondicaoDerrota();//condição de derrota
                 }
+            }
+            function FaseFinal(){
+                texto.innerText = "Parabéns!!! Você é um(a) jovem destemido(a) e conquistou a vacina contra o coronga."
             }
 
             function CondicaoDerrota(){
@@ -168,7 +172,8 @@
                     document.getElementById("mySelect").appendChild(menuOpcao2); 
                 
                    // var botao = elementFactory('button', 'botao-1', 'qualquer-classe', 'Próxima fase')
-                    button.addEventListener('click',CondicaoVitoria3);
+                   // button.addEventListener('click',CondicaoVitoria3);
+                   button.onclick = CondicaoVitoria3;
                 
                     texto.innerText = 'Você prefere ir à Brasília ou Churrascar com os amigos?';
                     console.log(tagHtml);
@@ -224,7 +229,7 @@
 
                     menuOpcao.setAttribute("value", "conversar"); 
                     
-                    item.textContent ="Bater com Bolsodracula";
+                    item.textContent ="Bater no Bolsodracula";
                     menuOpcao.appendChild(item);
                     document.getElementById("mySelect").appendChild(menuOpcao); 
                
@@ -236,7 +241,7 @@
                 
                     button.onclick = CondicaoVitoria6;
                 
-                    texto.innerText = 'Faça sua escolha Padawan, vai para o Laboratório ou quer gastar o Corona Voucher';
+                    texto.innerText = 'Faça sua escolha final Padawan, vai para o Laboratório ou quer gastar o Corona Voucher';
             }
         </script>
    

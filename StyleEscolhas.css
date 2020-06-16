@@ -25,12 +25,13 @@ select{
     display: flex;
     align-items: center;
     margin: 20px;
+    height: 30px;
 }
 
 button{
     display: flex;
-    justify-content: center;
-    align-items: end;
+    justify-content: center; /*trouxe o item p meio*/
+    align-items: center;       /*alinhar meio da pag*/
     font-family: 'Press Start 2P';
     background-color: yellow;
     color: #120136;
@@ -38,9 +39,13 @@ button{
     width: 150px;
 }
 
-.restart{
+.restart a{
     position: absolute;
     top: 10px;
     right: 70px;
+    color: yellow;
+    font-weight: bold; 
+    text-transform: uppercase; /*vai tirar o clicavel do elemento*/  
+    text-decoration: none;
 }
 
