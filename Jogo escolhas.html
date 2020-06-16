@@ -121,7 +121,7 @@
                     //selecionou a tag botão
                     //button.onclick = CondicaoVitoria;   
                     //button.innerText = 'Próxima Fase';   //mudou o nome do botão
-                    var botao = elementFactory('button', 'botao-1', 'qualquer-classe', 'Próxima fase')
+                    button.onclick = CondicaoVitoria;
 
                     texto.innerText =  'E aí estudante, você prefere continuar em casa e descansar ou sair para dar um rolê?';
                 
@@ -167,6 +167,7 @@
                     menuOpcao2.appendChild(item1);
                     document.getElementById("mySelect").appendChild(menuOpcao2); 
                 
+                   // var botao = elementFactory('button', 'botao-1', 'qualquer-classe', 'Próxima fase')
                     button.addEventListener('click',CondicaoVitoria3);
                 
                     texto.innerText = 'Você prefere ir à Brasília ou Churrascar com os amigos?';
